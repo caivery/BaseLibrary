@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6.0dip"
+    android:background="@drawable/public_bg_bg"
+    android:orientation="vertical"
+    android:paddingBottom="12.0dip"
+    android:paddingLeft="1.0dip"
+    android:paddingRight="1.0dip"
+    android:paddingTop="1.0dip">
+
+    <com.tany.myapplication.view.view.MyImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImage="@drawable/icon_failure"
+        fresco:failureImageScaleType="centerInside"
+        fresco:placeholderImage="@drawable/img_bg"
+        fresco:placeholderImageScaleType="fitCenter"
+
+
+     />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2.0dip" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginTop="10.0dip">
+
+        <LinearLayout
+            android:id="@+id/lay_like_num"
+            android:layout_width="52.0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_like_num"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:src="@drawable/icon_wuse_small" />
+
+            <TextView
+                android:id="@+id/tv_like_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4.0dip"
+                android:text="13" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_comment_num"
+            android:layout_width="52.0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:src="@drawable/icon_comment" />
+
+            <TextView
+                android:id="@+id/tv_comment_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4.0dip"
+                android:text="12" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

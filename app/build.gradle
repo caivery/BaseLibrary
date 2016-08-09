@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+//******************************Module对应的build.gradle********************************
+
+buildscript { //这段代码放在Project或module中的build都可以。其他两段代码需要放置在module的build中
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.0.0'
+    }
+}
+
+apply plugin: 'org.greenrobot.greendao'
+greendao {//这段代码 用来修改自动生成代码存放存放位置的
+    schemaVersion 1
+    daoPackage 'com.tany.myapplication.model.gen' //修改成你自己的包名下，想存放greenDao自动生成文件的目录。
+    targetGenDir 'src/main/java'
+}
+
+
+
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        applicationId "com.tany.myapplication"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    //...这里还有一些其他的依赖
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
+
+    compile 'com.alibaba:fastjson:1.1.52.android'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
+    compile 'com.jcodecraeer:xrecyclerview:1.2.7'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+}
