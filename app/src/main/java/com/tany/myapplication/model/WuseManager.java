@@ -15,7 +15,7 @@ public class WuseManager {
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
 
-    //初始化
+    //构造初始化
     //1.获得指定数据库如wuse-db的协助者对象，（有就获得指定数据库对象，没有就创建。）
     //2.使用数据库链接，用来创建DaoMaster
     //3.创建回话对象（未指定对话对象）

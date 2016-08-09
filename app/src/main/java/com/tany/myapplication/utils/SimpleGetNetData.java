@@ -178,6 +178,11 @@ public class SimpleGetNetData {
 
     //额外的方法
 
+    //强制写入缓存日志
+    public void flush(){
+        DiskCacheManager.getInstance().flush();
+    }
+
     //对外接口。功能：清除缓存
     public void clearCache(){
         DiskCacheManager.getInstance().clearCache();
@@ -186,6 +191,13 @@ public class SimpleGetNetData {
     //对外接口。 功能：查询缓存文件大小。
     public long cacheSize(){
        return DiskCacheManager.getInstance().size() / 1024;
+    }
+
+
+
+    //对外接口 。根据tag 取消队列中的请求
+    public void cancelByTag(Object tag){
+        OkHttpUtils.getInstance().cancelTag(tag);
     }
 
 }

@@ -107,7 +107,7 @@ public class DetailActivity extends AppCompatActivity {
         getEditText();//根据id
         Order unique = WuseManager.getInstance().getSession().getOrderDao().queryBuilder().where(OrderDao.Properties.Id.eq(id)).build().unique();
         if (unique != null && (userName == unique.getOwnerId())) {//判断操作是否属于该用户控制
-            WuseManager.getInstance().getSession().getOrderDao().deleteByKey(id);
+            WuseManager.getInstance().getSession().getOrderDao().deleteByKey(id);//删除
         } else {
             Toast.makeText(DetailActivity.this, "请确认id是否正确", Toast.LENGTH_SHORT).show();
         }

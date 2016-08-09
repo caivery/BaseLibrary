@@ -188,8 +188,8 @@ public class DiskLruCahceActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-//        DiskCacheManager.getInstance().flush();
-//        OkHttpUtils.getInstance().cancelTag(this);//取消所有tag标记的联网请求
+//        SimpleGetNetData.getInstance().flush();//强制写入日志，避免查不到缓存
+//        SimpleGetNetData.getInstance().cancelByTag(this);//取消所有tag标记的联网请求
         super.onStop();
     }
 }
